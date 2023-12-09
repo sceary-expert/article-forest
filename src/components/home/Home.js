@@ -1,6 +1,7 @@
 
 
 import { CheckCircle, ChevronDown, ChevronUp} from 'lucide-react'
+import { Link } from 'react-router-dom';
 export default function Home() {
     return (
         <div className="mx-auto w-full max-w-7xl">
@@ -193,9 +194,9 @@ export default function Home() {
           </div>
           <p className="textbase mt-6 text-center text-gray-600">
             Can&apos;t find what you&apos;re looking for?{' '}
-            <a href="#" title="" className="font-semibold text-black hover:underline">
+            <Link to={"/contact"} title="" className="font-semibold text-black hover:underline">
               Contact our support
-            </a>
+            </Link>
           </p>
         </div>
       </section>
