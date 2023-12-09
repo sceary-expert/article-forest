@@ -1,4 +1,4 @@
-import { Link} from "react-router-dom";
+
 export default function Footer() {
     return (
         <div className="mx-auto mt-12 max-w-7xl">

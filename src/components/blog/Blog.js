@@ -1,22 +1,8 @@
 'use client'
 
 import React from 'react'
-import { Menu, X } from 'lucide-react'
 
-const menuItems = [
-  {
-    name: 'Home',
-    href: '#',
-  },
-  {
-    name: 'About',
-    href: '#',
-  },
-  {
-    name: 'Contact',
-    href: '#',
-  },
-]
+
 
 const posts = [
   {
@@ -119,11 +105,7 @@ const posts = [
 ]
 
 export default function Blog() {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
 
   return (
     <div>

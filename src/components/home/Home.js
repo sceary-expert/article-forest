@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 
-import { CheckCircle, ChevronDown, ChevronUp, Menu, Star, X } from 'lucide-react'
+
+import { CheckCircle, ChevronDown, ChevronUp} from 'lucide-react'
 export default function Home() {
     return (
         <div className="mx-auto w-full max-w-7xl">
