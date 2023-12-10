@@ -10,6 +10,7 @@ import About from './components/about/About';
 
 import Blog from './components/blog/Blog';
 import Contact from './components/contacts/Contact';
+import SignIn from './components/signin/SignIn';
 
 // const router = createBrowserRouter([
 //   {
@@ -39,6 +40,7 @@ const router = createBrowserRouter(
       <Route path = 'about' element= {<About/>} />
       <Route path = 'contact' element= {<Contact/>} />
       <Route path = 'blog' element= {<Blog/>} />
+      <Route path = 'sign-in' element= {<SignIn/>} />
     </Route>
   )
 )
