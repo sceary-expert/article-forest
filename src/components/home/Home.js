@@ -1,8 +1,13 @@
 
 
 import { CheckCircle, ChevronDown, ChevronUp} from 'lucide-react'
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 export default function Home() {
+  const[collapsed, setCollapsed] = useState(true);
+  const handleCollapse = () =>{
+    setCollapsed(!collapsed);
+  }
     return (
         <div className="mx-auto w-full max-w-7xl">
             <div className="relative w-full bg-white">
@@ -49,7 +54,7 @@ export default function Home() {
             />
           </div>
         </div>
-      </div>
+        </div>
       {/* Features Section */}
       {/* <div className="mx-auto my-32 max-w-7xl px-2 lg:px-8">
         <div className="grid grid-cols-1 gap-y-8 text-center sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
@@ -202,19 +207,26 @@ export default function Home() {
           <div className="mx-auto mt-8 max-w-3xl space-y-4 md:mt-16">
             <div className="cursor-pointer rounded-md border border-gray-400 shadow-lg transition-all duration-200">
               <button
+                onClick={handleCollapse}
                 type="button"
                 className="flex w-full items-center justify-between px-4 py-5 sm:p-6"
               >
                 <span className="flex text-lg font-semibold text-black">How do I get started?</span>
-
-                <ChevronUp className="h-5 w-5 text-gray-500" />
+                {
+                  collapsed?(
+                    <ChevronDown className="h-5 w-5 text-gray-500" />    
+                  ):(<ChevronUp className="h-5 w-5 text-gray-500" />)
+                }
+                
               </button>
-              <div className="px-4 pb-5 sm:px-6 sm:pb-6">
-                <p className="text-gray-500">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aliquam adipisci
-                  iusto aperiam? Sint asperiores sequi nobis inventore ratione deleniti?
-                </p>
-              </div>
+              {!collapsed?(
+                <div className="px-4 pb-5 sm:px-6 sm:pb-6">
+                  <p className="text-gray-500">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aliquam adipisci
+                    iusto aperiam? Sint asperiores sequi nobis inventore ratione deleniti?
+                  </p>
+                </div>):(<div></div>)
+              }
             </div>
             {Array.from({ length: 2 }).map((_, i) => (
               <div
