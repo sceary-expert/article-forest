@@ -4,9 +4,11 @@ import { CheckCircle, ChevronDown, ChevronUp} from 'lucide-react'
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 export default function Home() {
-  const[collapsed, setCollapsed] = useState(true);
-  const handleCollapse = () =>{
-    setCollapsed(!collapsed);
+  const[collapsed, setCollapsed] = useState({});
+  const handleCollapse = (index) =>{
+    setCollapsed((prevCollapsed) =>({
+      ...prevCollapsed, [index] : !prevCollapsed[index],
+    }));
   }
     return (
         <div className="mx-auto w-full max-w-7xl">
@@ -207,28 +209,79 @@ export default function Home() {
           <div className="mx-auto mt-8 max-w-3xl space-y-4 md:mt-16">
             <div className="cursor-pointer rounded-md border border-gray-400 shadow-lg transition-all duration-200">
               <button
-                onClick={handleCollapse}
+                onClick={() => handleCollapse(0)}
                 type="button"
                 className="flex w-full items-center justify-between px-4 py-5 sm:p-6"
               >
                 <span className="flex text-lg font-semibold text-black">How do I get started?</span>
                 {
-                  collapsed?(
+                  collapsed[0] === undefined || collapsed[0]?(
                     <ChevronDown className="h-5 w-5 text-gray-500" />    
                   ):(<ChevronUp className="h-5 w-5 text-gray-500" />)
                 }
                 
               </button>
-              {!collapsed?(
+              {collapsed[0] === undefined ||  collapsed[0]?(<div></div>):(
                 <div className="px-4 pb-5 sm:px-6 sm:pb-6">
                   <p className="text-gray-500">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aliquam adipisci
                     iusto aperiam? Sint asperiores sequi nobis inventore ratione deleniti?
                   </p>
-                </div>):(<div></div>)
+                </div>)
               }
             </div>
-            {Array.from({ length: 2 }).map((_, i) => (
+            <div className="cursor-pointer rounded-md border border-gray-400 shadow-lg transition-all duration-200">
+              <button
+                onClick={() => handleCollapse(1)}
+                type="button"
+                className="flex w-full items-center justify-between px-4 py-5 sm:p-6"
+              >
+                <span className="flex text-lg font-semibold text-black">How do I get started?</span>
+                {
+                  collapsed[1] === undefined || collapsed[1]?(
+                    <ChevronDown className="h-5 w-5 text-gray-500" />    
+                  ):(<ChevronUp className="h-5 w-5 text-gray-500" />)
+                }
+                
+              </button>
+              {collapsed[1] === undefined ||  collapsed[1]?(<div></div>):(
+                <div className="px-4 pb-5 sm:px-6 sm:pb-6">
+                  <p className="text-gray-500">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aliquam adipisci
+                    iusto aperiam? Sint asperiores sequi nobis inventore ratione deleniti?
+                  </p>
+                </div>)
+              }
+            </div>
+            <div className="cursor-pointer rounded-md border border-gray-400 shadow-lg transition-all duration-200">
+              <button
+                onClick={() => handleCollapse(2)}
+                type="button"
+                className="flex w-full items-center justify-between px-4 py-5 sm:p-6"
+              >
+                <span className="flex text-lg font-semibold text-black">How do I get started?</span>
+                {
+                  collapsed[2] === undefined || collapsed[2]?(
+                    <ChevronDown className="h-5 w-5 text-gray-500" />    
+                  ):(<ChevronUp className="h-5 w-5 text-gray-500" />)
+                }
+                
+              </button>
+              {collapsed[2] === undefined ||  collapsed[2]?(<div></div>):(
+                <div className="px-4 pb-5 sm:px-6 sm:pb-6">
+                  <p className="text-gray-500">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat aliquam adipisci
+                    iusto aperiam? Sint asperiores sequi nobis inventore ratione deleniti?
+                  </p>
+                </div>)
+              }
+            </div>
+
+
+
+
+
+            {/* {Array.from({ length: 2 }).map((_, i) => (
               <div
                 key={i}
                 className="cursor-pointer rounded-md border border-gray-400 transition-all duration-200"
@@ -243,7 +296,7 @@ export default function Home() {
                   <ChevronDown className="hidden h-5 w-5 text-gray-500 md:block" />
                 </button>
               </div>
-            ))}
+            ))} */}
           </div>
           <p className="textbase mt-6 text-center text-gray-600">
             Can&apos;t find what you&apos;re looking for?{' '}
