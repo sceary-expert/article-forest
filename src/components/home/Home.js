@@ -51,7 +51,7 @@ export default function Home() {
         </div>
       </div>
       {/* Features Section */}
-      <div className="mx-auto my-32 max-w-7xl px-2 lg:px-8">
+      {/* <div className="mx-auto my-32 max-w-7xl px-2 lg:px-8">
         <div className="grid grid-cols-1 gap-y-8 text-center sm:grid-cols-2 sm:gap-12 lg:grid-cols-4">
           <div>
             <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-blue-100">
@@ -146,7 +146,48 @@ export default function Home() {
             </p>
           </div>
         </div>
+      </div> */}
+      
+      <div className="container my-24 mx-auto md:px-6 ">
+        
+        <section className="mb-32 text-center">
+          <div className="grid gap-x-6 md:grid-cols-3 lg:gap-x-12">
+            <div className="mb-12 md:mb-0">
+              <h2 className="display-5 mb-4 text-4xl font-bold text-primary dark:text-primary-400">
+                1000
+              </h2>
+              <h5 className="mb-4 text-lg font-medium">Happy customers</h5>
+              <p className="text-neutral-500 dark:text-neutral-300">
+                Laudantium totam quas cumque pariatur at doloremque hic quos quia
+                eius
+              </p>
+            </div>
+
+            <div className="mb-12 md:mb-0">
+              <h2 className="display-5 mb-4 text-4xl font-bold text-primary dark:text-primary-400">
+                70%
+              </h2>
+              <h5 className="mb-4 text-lg font-medium">Growth</h5>
+              <p className="text-neutral-500 dark:text-neutral-300">
+                Eum nostrum fugit numquam, voluptates veniam neque quibusdam ullam
+              </p>
+            </div>
+
+            <div className="mb-12 md:mb-0">
+              <h2 className="display-5 mb-4 text-4xl font-bold text-primary dark:text-primary-400">
+                49
+              </h2>
+              <h5 className="mb-4 text-lg font-medium">Projects</h5>
+              <p className="text-neutral-500 dark:text-neutral-300">
+                Enim cupiditate, minus nulla dolor cumque iure eveniet facere
+                potistas
+              </p>
+            </div>
+          </div>
+        </section>
+        
       </div>
+
       {/* FAQs */}
       <section className="mx-auto max-w-7xl bg-gray-50 px-2 py-10 md:px-0">
         <div>
