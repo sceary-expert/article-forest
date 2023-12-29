@@ -54,7 +54,7 @@ export default function Home() {
             <img
               className="aspect-[3/2] bg-gray-50 object-cover lg:aspect-[4/3] lg:h-[700px] xl:aspect-[16/9]"
               src="/Article Forest Poster.png"
-              alt=""
+              alt="/Article Forest Poster min.png"
             />
           </div>
         </div>
